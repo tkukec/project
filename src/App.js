@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "./lib/helper/supabaseClient";
+import Navbar from "./components/Navbar";
 
 export default function App() {
 	const [user, setUser] = useState(null);
@@ -38,8 +39,9 @@ export default function App() {
 		<div>
 			{user ? (
 				<div>
-					<h1>Authenticated</h1>
+					<Navbar user={user} logout={logout} />
 					<button onClick={logout}>Logout</button>
+
 				</div>
 			) : (
 				<button onClick={login}>Login with Google</button>
