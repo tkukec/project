@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "./lib/helper/supabaseClient";
 import Navbar from "./components/Navbar";
 
+import { Button } from "@mui/material";
+
 export default function App() {
 	const [user, setUser] = useState(null);
 
@@ -40,8 +42,6 @@ export default function App() {
 			{user ? (
 				<div>
 					<Navbar user={user} logout={logout} />
-					<button onClick={logout}>Logout</button>
-
 				</div>
 			) : (
 				<button onClick={login}>Login with Google</button>
